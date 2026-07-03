@@ -1,0 +1,5 @@
+azure-storage-file-datalake
+snowflake-connector-python
+pandas
+requests
+python-dotenv
