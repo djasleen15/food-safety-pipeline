@@ -1,16 +1,6 @@
 from airflow import DAG
-from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 from datetime import datetime
-import sys
-import os
-
-# Add project root to path so Airflow can find our modules
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
-
-from ingestion.fda_recalls import run as run_fda
-from ingestion.cdc_outbreaks import run as run_cdc
-from loaders.snowflake_loader import run as run_loader
 
 with DAG(
     dag_id="food_safety_pipeline",
@@ -21,19 +11,19 @@ with DAG(
     description="Weekly ELT pipeline ingesting FDA recall and CDC outbreak data"
 ) as dag:
 
-    ingest_fda = PythonOperator(
+    ingest_fda = BashOperator(
         task_id="ingest_fda_recalls",
-        python_callable=run_fda
+        bash_command="cd /opt/airflow && python ingestion/fda_recalls.py"
     )
 
-    ingest_cdc = PythonOperator(
+    ingest_cdc = BashOperator(
         task_id="ingest_cdc_outbreaks",
-        python_callable=run_cdc
+        bash_command="cd /opt/airflow && python ingestion/cdc_outbreaks.py"
     )
 
-    load_snowflake = PythonOperator(
+    load_snowflake = BashOperator(
         task_id="load_to_snowflake",
-        python_callable=run_loader
+        bash_command="cd /opt/airflow && python loaders/snowflake_loader.py"
     )
 
     run_dbt = BashOperator(
