@@ -10,3 +10,6 @@ data/*.csv
 airflow/airflow.db
 airflow/airflow.cfg
 airflow/webserver_config.py
+airflow/airflow.db
+airflow/airflow.cfg
+airflow/webserver_config.py
