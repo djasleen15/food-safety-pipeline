@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg_fda_recalls
+    description: "Cleaned and typed FDA food recall records"
+    columns:
+      - name: recall_number
+        description: "Unique identifier for each recall"
+        tests:
+          - unique
+          - not_null
+      - name: recall_initiation_date
+        description: "Date the recall was initiated"
+        tests:
+          - not_null
+      - name: classification
+        description: "Severity class of the recall"
+        tests:
+          - accepted_values:
+              values: ['Class I', 'Class II', 'Class III']
+      - name: recalling_firm
+        tests:
+          - not_null
+
+  - name: stg_cdc_outbreaks
+    description: "Cleaned and typed CDC foodborne illness outbreak records"
+    columns:
+      - name: outbreak_id
+        description: "Surrogate key for each outbreak record"
+        tests:
+          - unique
+          - not_null
+      - name: outbreak_date
+        description: "Approximate date of outbreak onset (day 1 of the month)"
+        tests:
+          - not_null
+      - name: pathogen_raw
+        tests:
+          - not_null
+      - name: illnesses
+        description: "Number of reported illnesses"

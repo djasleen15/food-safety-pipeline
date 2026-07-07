@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    database: food_safety
+    schema: raw
+    tables:
+      - name: fda_recalls
+        description: "Raw FDA food enforcement recall data from the OpenFDA API"
+      - name: cdc_outbreaks
+        description: "Raw CDC foodborne illness outbreak data from NORS"
