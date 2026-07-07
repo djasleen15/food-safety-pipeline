@@ -1,0 +1,13 @@
+pathogen_keyword,fda_keyword,pathogen_category
+Salmonella,Salmonella,Bacterial
+Listeria,Listeria,Bacterial
+Escherichia coli,E. coli,Bacterial
+Escherichia coli,Escherichia coli,Bacterial
+Campylobacter,Campylobacter,Bacterial
+Clostridium,Clostridium,Bacterial
+Bacillus,Bacillus,Bacterial
+Staphylococcus,Staphylococcus,Bacterial
+Norovirus,Norovirus,Viral
+Hepatitis A,Hepatitis A,Viral
+Cyclospora,Cyclospora,Parasitic
+Cryptosporidium,Cryptosporidium,Parasitic

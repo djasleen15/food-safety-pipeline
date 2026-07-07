@@ -25,3 +25,6 @@ models:
     gold:
       +materialized: table
       +schema: gold
+seeds:
+  food_safety:
+    +schema: raw
