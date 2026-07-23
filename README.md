@@ -107,5 +107,5 @@ Outbreak-recall matching is probabilistic. A CDC outbreak is matched to an FDA r
 ## Author
 
 Jasleen Dhaliwal — University of Toronto
-[GitHub](https://github.com/djasleen15) | [LinkedIn](#)
+[GitHub](https://github.com/djasleen15) | [LinkedIn](https://www.linkedin.com/in/jasleen-dhaliwal-3b57692ba/)
 
